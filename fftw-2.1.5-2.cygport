@@ -1,0 +1,71 @@
+DESCRIPTION="Discrete Fourier transform computation library"
+HOMEPAGE="http://www.fftw.org/"
+SRC_URI="http://www.fftw.org/${P}.tar.gz"
+PATCH_URI="
+	mirror://portage/sci-libs/${PN}/files/${P}-as-needed.patch
+	mirror://portage/sci-libs/${PN}/files/${P}-configure.in.patch
+	mirror://portage/sci-libs/${PN}/files/${P}-no-test.patch
+	2.1.5-no-undefined.patch
+	2.1.5-tests-exeext.patch
+"
+
+PKG_NAMES="${PN} lib${PN}2 lib${PN}-devel"
+libfftw2_CONTENTS="usr/bin/*-2.dll usr/share/doc/"
+libfftw_devel_CONTENTS="usr/include/ usr/lib/ usr/share/info/"
+
+DISTCLEANFILES="fftw/config.h fftw/fftw.h"
+
+NO_AUTOHEADER=1
+CFLAGS+=" -fomit-frame-pointer"
+CYGCONF_ARGS="
+	--enable-shared --enable-static
+	--enable-i386-hacks
+	--disable-mpi
+	--disable-pentium-timer
+	--disable-threads --without-openmp
+	--enable-type-prefix
+	--enable-vec-recurse
+	--with-gcc
+"
+CYGCONF_SOURCE=${S}
+
+src_compile() {
+	cd ${S}
+	cygautoreconf
+
+	mkdir -p ${B}/single
+	cd ${B}/single
+	cygconf --enable-float
+	cygmake
+
+	mkdir -p ${B}/double
+	cd ${B}/double
+	cygconf
+	cygmake
+}
+
+src_test() {
+	cd ${B}/single
+	cygtest
+
+	cd ${B}/double
+	cygtest
+}
+
+src_install() {
+	cd ${B}/single
+	cyginstall
+
+	cd ${B}/double
+	cyginstall
+
+	insinto /usr/include
+	doins ${S}/fortran/fftw_f77.i
+
+	for l in fftw rfftw
+	do
+		dosym d${l}.h /usr/include/${l}.h
+		dosym libd${l}.a /usr/lib/lib${l}.a
+		dosym libd${l}.dll.a /usr/lib/lib${l}.dll.a
+	done
+}

@@ -1,0 +1,104 @@
+fftw
+------------------------------------------
+This is FFTW, a collection of fast C routines to compute the Discrete
+Fourier Transform in one or more dimensions.
+
+This version is provided for compatibility purposes; new packages 
+should be using fftw3.
+
+Runtime requirements:
+  cygwin-1.5.25-15
+
+Build requirements:
+  autoconf2.5-2.61-1
+  automake1.7-1.7.9-4
+  binutils-20080624-2
+  cygport-0.4.3-1
+  gawk-3.1.6-1
+  gcc-core-3.4.4-3
+  libtool-2.2.6a-1
+  make-3.81-1
+  sed-4.1.5-2
+
+Canonical website:
+  http://www.fftw.org/
+
+Canonical download:
+  http://www.fftw.org/
+
+-------------------------------------------
+
+Build instructions:
+  unpack fftw-2.1.5-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./fftw-2.1.5-X.cygport all
+
+This will create:
+  /usr/src/fftw-2.1.5-X-src.tar.bz2
+  /usr/src/libfftw-devel-2.1.5-X.tar.bz2
+  /usr/src/libfftw2-2.1.5-X.tar.bz2
+
+-------------------------------------------
+
+Files included in the binary packages:
+
+(libfftw2)
+  /usr/bin/cygdfftw-2.dll
+  /usr/bin/cygdrfftw-2.dll
+  /usr/bin/cygsfftw-2.dll
+  /usr/bin/cygsrfftw-2.dll
+  /usr/share/doc/fftw-2.1.5/AUTHORS
+  /usr/share/doc/fftw-2.1.5/COPYING
+  /usr/share/doc/fftw-2.1.5/COPYRIGHT
+  /usr/share/doc/fftw-2.1.5/ChangeLog
+  /usr/share/doc/fftw-2.1.5/INSTALL
+  /usr/share/doc/fftw-2.1.5/NEWS
+  /usr/share/doc/fftw-2.1.5/README
+  /usr/share/doc/fftw-2.1.5/TODO
+
+(libfftw-devel)
+  /usr/include/dfftw.h
+  /usr/include/drfftw.h
+  /usr/include/fftw_f77.i
+  /usr/include/fftw.h
+  /usr/include/rfftw.h
+  /usr/include/sfftw.h
+  /usr/include/srfftw.h
+  /usr/lib/libdfftw.a
+  /usr/lib/libdfftw.dll.a
+  /usr/lib/libdfftw.la
+  /usr/lib/libdrfftw.a
+  /usr/lib/libdrfftw.dll.a
+  /usr/lib/libdrfftw.la
+  /usr/lib/libfftw.a
+  /usr/lib/libfftw.dll.a
+  /usr/lib/librfftw.a
+  /usr/lib/librfftw.dll.a
+  /usr/lib/libsfftw.a
+  /usr/lib/libsfftw.dll.a
+  /usr/lib/libsfftw.la
+  /usr/lib/libsrfftw.a
+  /usr/lib/libsrfftw.dll.a
+  /usr/lib/libsrfftw.la
+  /usr/share/info/fftw.info-1.gz
+  /usr/share/info/fftw.info-2.gz
+  /usr/share/info/fftw.info-3.gz
+  /usr/share/info/fftw.info-4.gz
+  /usr/share/info/fftw.info-5.gz
+  /usr/share/info/fftw.info.gz
+
+------------------
+
+Port Notes:
+
+----- version 2.1.5-2 -----
+Rebuilt.
+
+----- version 2.1.5-1 -----
+Initial release for Cygwin.
+
+
+Cygwin port maintained by:
+http://sourceware.org/cygwinports/

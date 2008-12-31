@@ -1,0 +1,39 @@
+--- origsrc/fftw-2.1.5/fftw/Makefile.am	2003-03-24 01:05:32.000000000 -0600
++++ src/fftw-2.1.5/fftw/Makefile.am	2008-12-31 11:40:45.300000000 -0600
+@@ -18,13 +18,13 @@
+ lib@FFTW_PREFIX@fftw_la_SOURCES = $(CODELETS) $(OTHERSRC)             \
+                                         fftw.h fftw-int.h 
+ 
+-lib@FFTW_PREFIX@fftw_la_LDFLAGS = -version-info @SHARED_VERSION_INFO@
++lib@FFTW_PREFIX@fftw_la_LDFLAGS = -version-info @SHARED_VERSION_INFO@ -no-undefined
+ MAINTAINERCLEANFILES = $(CODELETS) config.c
+ DISTCLEANFILES = fftw.h sfftw.h dfftw.h
+ 
+ @FFTW_PREFIX1@fftw.h: fftw.h
+ 	rm -f $@
+-	sed 's/\"fftw/\"@FFTW_PREFIX@fftw/g;s/\"rfftw/\"@FFTW_PREFIX@rfftw/g' $(srcdir)/fftw.h > $@
++	sed 's/\"fftw/\"@FFTW_PREFIX@fftw/g;s/\"rfftw/\"@FFTW_PREFIX@rfftw/g' $< > $@
+ 
+ CLEANFILES = @FFTW_PREFIX1@fftw.h
+ 
+--- origsrc/fftw-2.1.5/rfftw/Makefile.am	2008-12-31 11:40:41.846875000 -0600
++++ src/fftw-2.1.5/rfftw/Makefile.am	2008-12-31 11:40:45.315625000 -0600
+@@ -17,7 +17,7 @@
+ lib@FFTW_PREFIX@rfftw_la_SOURCES = $(CODELETS) $(OTHERSRC)    \
+ 					 rfftw.h                   
+ 
+-lib@FFTW_PREFIX@rfftw_la_LDFLAGS = -version-info @SHARED_VERSION_INFO@
++lib@FFTW_PREFIX@rfftw_la_LDFLAGS = -version-info @SHARED_VERSION_INFO@ -no-undefined
+ lib@FFTW_PREFIX@rfftw_la_LIBADD = ../fftw/lib@FFTW_PREFIX@fftw.la
+ MAINTAINERCLEANFILES = $(CODELETS) rconfig.c
+ DISTCLEANFILES = srfftw.h drfftw.h
+--- origsrc/fftw-2.1.5/threads/Makefile.am	2008-12-31 11:40:43.300000000 -0600
++++ src/fftw-2.1.5/threads/Makefile.am	2008-12-31 11:58:07.378125000 -0600
+@@ -26,6 +26,7 @@
+                              fftw_threads-int.h
+ lib@FFTW_PREFIX@fftw_threads_la_LDFLAGS = \
+                              -version-info @SHARED_VERSION_INFO@ \
++                             -no-undefined \
+                              -rpath $(libdir)
+ 
+ lib@FFTW_PREFIX@fftw_threads_la_LIBADD = \

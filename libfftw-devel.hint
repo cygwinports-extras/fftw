@@ -1,0 +1,9 @@
+category: Math
+requires: cygwin libfftw2
+external-source: fftw
+sdesc: "Discrete Fourier Transform computation library (v2 development)"
+ldesc: "This is FFTW, a collection of fast C routines to compute the
+Discrete Fourier Transform in one or more dimensions.
+
+This version is provided for compatibility purposes; new packages
+should be using fftw3."
