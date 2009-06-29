@@ -1,5 +1,5 @@
 category: Math
-requires: cygwin libfftw2
+requires: libfftw2
 external-source: fftw
 sdesc: "Discrete Fourier Transform computation library (v2 development)"
 ldesc: "This is FFTW, a collection of fast C routines to compute the
