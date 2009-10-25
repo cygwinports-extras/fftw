@@ -7,17 +7,18 @@ This version is provided for compatibility purposes; new packages
 should be using fftw3.
 
 Runtime requirements:
-  cygwin-1.5.25-15
+  cygwin-1.7.0-62
+  libgcc1-4.3.4-1
 
 Build requirements:
-  autoconf2.5-2.61-1
-  automake1.7-1.7.9-4
-  binutils-20080624-2
-  cygport-0.4.3-1
-  gawk-3.1.6-1
-  gcc-core-3.4.4-3
-  libtool-2.2.6a-1
-  make-3.81-1
+  autoconf2.5-2.63-10
+  automake1.7-1.7.9-10
+  binutils-2.19.51-1
+  cygport-0.9.10-1
+  gawk-3.1.7-1
+  gcc4-core-4.3.4-1
+  libtool-2.2.7a-14
+  make-3.81-2
   sed-4.1.5-2
 
 Canonical website:
@@ -42,62 +43,10 @@ This will create:
 
 -------------------------------------------
 
-Files included in the binary packages:
-
-(libfftw2)
-  /usr/bin/cygdfftw-2.dll
-  /usr/bin/cygdrfftw-2.dll
-  /usr/bin/cygsfftw-2.dll
-  /usr/bin/cygsrfftw-2.dll
-  /usr/share/doc/fftw-2.1.5/AUTHORS
-  /usr/share/doc/fftw-2.1.5/COPYING
-  /usr/share/doc/fftw-2.1.5/COPYRIGHT
-  /usr/share/doc/fftw-2.1.5/ChangeLog
-  /usr/share/doc/fftw-2.1.5/INSTALL
-  /usr/share/doc/fftw-2.1.5/NEWS
-  /usr/share/doc/fftw-2.1.5/README
-  /usr/share/doc/fftw-2.1.5/TODO
-
-(libfftw-devel)
-  /usr/include/dfftw.h
-  /usr/include/drfftw.h
-  /usr/include/fftw_f77.i
-  /usr/include/fftw.h
-  /usr/include/rfftw.h
-  /usr/include/sfftw.h
-  /usr/include/srfftw.h
-  /usr/lib/libdfftw.a
-  /usr/lib/libdfftw.dll.a
-  /usr/lib/libdfftw.la
-  /usr/lib/libdrfftw.a
-  /usr/lib/libdrfftw.dll.a
-  /usr/lib/libdrfftw.la
-  /usr/lib/libfftw.a
-  /usr/lib/libfftw.dll.a
-  /usr/lib/librfftw.a
-  /usr/lib/librfftw.dll.a
-  /usr/lib/libsfftw.a
-  /usr/lib/libsfftw.dll.a
-  /usr/lib/libsfftw.la
-  /usr/lib/libsrfftw.a
-  /usr/lib/libsrfftw.dll.a
-  /usr/lib/libsrfftw.la
-  /usr/share/info/fftw.info-1.gz
-  /usr/share/info/fftw.info-2.gz
-  /usr/share/info/fftw.info-3.gz
-  /usr/share/info/fftw.info-4.gz
-  /usr/share/info/fftw.info-5.gz
-  /usr/share/info/fftw.info.gz
-
-------------------
-
 Port Notes:
 
------ version 2.1.5-2 -----
-Rebuilt.
-
------ version 2.1.5-1 -----
-Initial release for Cygwin.
+----- version 2.1.5-3 -----
+Initial release for Cygwin 1.7.
 
 
 Cygwin port maintained by:
